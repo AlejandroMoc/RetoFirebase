@@ -26,7 +26,7 @@ Las fases documentadas en este proyecto son:
 
 Los requisitos que se espera que se cumplan en este proyecto son:
 
-- **Cinco sensores y variables** escribiendo datos en la base de datos
-- **Aplicación** con información de la base
-- **Programa en Python** que visualice la información almacenada
+- **Cinco sensores y variables** escribiendo datos en la base de datos.
+- **Aplicación** con información de la base.
+- **Programa en Python** que visualice la información almacenada.
 - Cambiar el campo usuario por "Elemento mayor a 9" en caso de un elemento mayor a 9.
