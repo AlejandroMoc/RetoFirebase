@@ -10,7 +10,7 @@ Los integrantes del equipo de este proyecto son:
 
 - [**A01736171**](mailto:a01736171@tec.mx) Jesús Alejandro Gómez Bautista
 - [**A01656774**](mailto:a01656774@tec.mx) César Guerra Martínez
-- [**A01736353**](mailto:a01736353@tec.mx) lejandro Daniel Moctezuma Cruz
+- [**A01736353**](mailto:a01736353@tec.mx) Alejandro Daniel Moctezuma Cruz
 
 ## Elementos
 
