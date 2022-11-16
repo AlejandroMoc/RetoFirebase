@@ -6,4 +6,4 @@ En este caso en concreto utilizamos ___ como IDE, así como un código en lengua
 
 ## Código utilizado
 
-Para escribir en la base de datos se requirió de un código de Python que permitiese 
+Para escribir en la base de datos se requirió de un código de Python que permitiese transferir los mensajes. A continuación se presenta el código:
