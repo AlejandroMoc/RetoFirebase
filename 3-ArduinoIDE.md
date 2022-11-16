@@ -15,8 +15,8 @@ Se ejecuta el archivo .exe, sin modificar los parámetros de instalación predet
 
 Una vez dentro de la aplicación de Arduino IDE, nos dirigimos a la pestaña de Preferencias. En la casilla "Gestor de URLs Adicionales de Tarjetas", es necesario colocar la dirección URL de la tarjeta ESP32, en nuestro caso la desarrollada por Electronic Units. Por ello, colocamos la siguiente dirección: https://dl.espressif.com/dl/package_esp32_index.json. 
 
-Siguiente a esto, instalamos las librerías correspondientes al ESP32. Para la situación actual, instaló la librería _. 
+Siguiente a esto, instalamos las librerías correspondientes al ESP32. Para la situación actual, instaló la librería _, por _.
 
 ## Codigo utilizado
 
-Para 
+Una vez instaladas las librerías, se necesitó de un código para transmitir los datos por medio del IoT a la base de datos de Firebase. Para ello ocupamos el siguiente código:
