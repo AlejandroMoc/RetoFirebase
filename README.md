@@ -2,7 +2,11 @@
 
 # TC1004B_IoT
 
+## Proyecto Final
+
 En este proyecto se presentan los procedimientos y documentación relativa al proyecto del bloque de Implementación del Internet de las Cosas (Gpo. 501) con el profesor Emmanuel Torres Ríos. La entrega de este proyecto se dió el **14 de noviembre de 2022**.
+
+Si deseas acceder a la Wiki puedes hacer clic [aquí](https://github.com/A01736353/RetoFirebase/wiki).
 
 ## Integrantes del equipo
 
@@ -16,11 +20,12 @@ Los integrantes del equipo de este proyecto son:
 
 Las fases documentadas en este proyecto son:
 
-- Creación de una **base de datos** en **Firebase**
-- Lectura y escritura de la **base de datos** usando **Python**
-- Lectura y escritura de la **base de datos** usando **Arduino IDE**
-- Lectura y escritura de la **base de datos** usando **AppInventor**
-- Lectura de datos de **sensores** haciendo uso de los periféricos de un **ESP32**
+- [Creación de una **base de datos** en **Firebase**](https://github.com/A01736353/RetoFirebase/blob/main/1-BaseDatos.md)
+- [Lectura y escritura de la **base de datos** usando **Python**](https://github.com/A01736353/RetoFirebase/blob/main/2-Python.md)
+- [Lectura y escritura de la **base de datos** usando **Arduino IDE**](https://github.com/A01736353/RetoFirebase/blob/main/3-ArduinoIDE.md)
+- [Lectura y escritura de la **base de datos** usando **AppInventor**](https://github.com/A01736353/RetoFirebase/blob/main/4-AppInventor.md)
+- [Lectura de datos de **sensores** haciendo uso de los periféricos de un **ESP32**](https://github.com/A01736353/RetoFirebase/blob/main/5-SensoresESP32.md)
+
 
 ## Características del sistema
 
