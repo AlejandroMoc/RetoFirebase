@@ -2,6 +2,8 @@
 
 # TC1004B_IoT
 
+Implementación de internet de las cosas (Gpo 501)
+
 ## Proyecto Final
 
 En este proyecto se presentan los procedimientos y documentación relativa al proyecto del bloque de Implementación del Internet de las Cosas (Gpo. 501) con el profesor Emmanuel Torres Ríos. La entrega de este proyecto se dió el **14 de noviembre de 2022**.
