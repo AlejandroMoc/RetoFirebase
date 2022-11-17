@@ -18,6 +18,6 @@ organización de Google Cloud a itesm.mx. Se desactivó la opción de Google Ana
 
 ## Configuración de Firebase
 
-Una vez dentro del proyecto, 
+Una vez dentro del proyecto, es posible encontrar la dirección de ---------------- en ------------------------
 
 
