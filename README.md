@@ -22,7 +22,7 @@ Como sensores utilizados para este proyecto están:
 - Sensor de temperatura y densidad
 - Sensor de movimiento
 - Sensor de fotorecepción
-- Sensor de 
+- Sensor de flama
 
 
 
