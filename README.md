@@ -24,9 +24,6 @@ Como sensores utilizados para este proyecto están:
 - Sensor de fotorecepción
 - Sensor de flama
 
-
-
-
 Si deseas acceder a la Wiki puedes hacer clic [aquí](https://github.com/A01736353/RetoFirebase/wiki).
 
 ## Integrantes del equipo
@@ -56,3 +53,7 @@ Los requisitos que se espera que se cumplan en este proyecto son:
 - **Aplicación** con información de la base.
 - **Programa en Python** que visualice la información almacenada.
 - Cambiar el campo usuario por "Elemento mayor a 9" en caso de un elemento mayor a 9.
+
+## Licensia
+
+Este proyecto cuenta con la licensia GPLv3, la cual estipula que no se puede vender ni demandar por la auditoría del programa.
