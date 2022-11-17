@@ -17,19 +17,12 @@ El objetivo de este reto es utilizar los conocimientos y habilidades necesarios 
 - Programación, interconexión y puesta en operación de dispositivos.
 - Análisis de requerimientos, planeación y administración del proceso de ejecución del sistema doméstico.
 
+Como sensores utilizados para este proyecto están:
 
-
-
-
-
-
-Para la elaboración del reto se te solicitará la implementación de un sistema interconectado de microcontroladores y funcionalidades con una especificación de referencia, sin embargo a lo largo de su implementación tu Asesor del Reto te solicitará diseñar algoritmos y servicios específicos que complementen la descripción de referencia, adecuando los requerimientos a mini-retos que se te plantearán resolver en tu implementación final; ejemplos de estos mini-retos pueden ser:
-
-            Control de encendido y apagado de LEDs y luminarias
-            Generación de señales de sincorización y reloj en la red domótica
-            Incorporación de sensores adicionales
-            Gestión avanzada de consumo eléctrico ("deepSleep") en los dispositivos de la red domótica
-
+- Sensor de temperatura y densidad
+- Sensor de movimiento
+- Sensor de fotorecepción
+- Sensor de 
 
 
 
