@@ -16,7 +16,7 @@ Como sensores utilizados se encuentran:
 
 Para comprobar el funcionamiento de los sensores, fue importante llevar a cabo una conexión con la cual el ESP32 pudiera comunicarse con cada uno de los sensores. La conexión que se utilizó se presenta a continuación:
 
-<img src="https://javier.rodriguez.org.mx/itesm/2014/tecnologico-de-monterrey-blue.png" width=55% height=55%>
+<img src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" width=55% height=55%>
 
 
 Tal y como se puede apreciar, ---------------------------------------------------------------------------EXPLICACION-------------------------
