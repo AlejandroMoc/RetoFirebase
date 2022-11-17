@@ -19,4 +19,4 @@ Para comprobar el funcionamiento de los sensores, fue importante llevar a cabo u
 <img src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" width=55% height=55%>
 
 
-Tal y como se puede apreciar, ---------------------------------------------------------------------------EXPLICACION-------------------------
+Tal y como se puede apreciar, en este sistema se logran colocar todos los sensores necesarios. De la misma forma, utilizamos cables ........
