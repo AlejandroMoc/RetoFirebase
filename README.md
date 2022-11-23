@@ -38,11 +38,11 @@ Los integrantes del equipo de este proyecto son:
 
 Las fases documentadas en este proyecto son:
 
-- [Creación de una **base de datos** en **Firebase**](https://github.com/A01736353/RetoFirebase/blob/main/1-BaseDatos.md)
-- [Lectura y escritura de la **base de datos** usando **Python**](https://github.com/A01736353/RetoFirebase/blob/main/2-Python.md)
-- [Lectura y escritura de la **base de datos** usando **Arduino IDE**](https://github.com/A01736353/RetoFirebase/blob/main/3-ArduinoIDE.md)
-- [Lectura y escritura de la **base de datos** usando **AppInventor**](https://github.com/A01736353/RetoFirebase/blob/main/4-AppInventor.md)
-- [Lectura de datos de **sensores** haciendo uso de los periféricos de un **ESP32**](https://github.com/A01736353/RetoFirebase/blob/main/5-SensoresESP32.md)
+- [Creación de una **base de datos** en **Firebase**](https://github.com/A01736353/RetoFirebase/wiki/Base-de-datos-Firebase)
+- [Lectura y escritura de la **base de datos** usando **Python**](https://github.com/A01736353/RetoFirebase/wiki/Aplicaci%C3%B3n-IoT#python)
+- [Lectura y escritura de la **base de datos** usando **Arduino IDE**](https://github.com/A01736353/RetoFirebase/wiki/Aplicaci%C3%B3n-IoT#arduino)
+- [Lectura y escritura de la **base de datos** usando **AppInventor**](https://github.com/A01736353/RetoFirebase/wiki/MIT-App-Inventor)
+- [Lectura de datos de **sensores** haciendo uso de los periféricos de un **ESP32**](https://github.com/A01736353/RetoFirebase/wiki/Aplicaci%C3%B3n-IoT#lectura-de-sensores)
 
 
 ## Características del sistema
