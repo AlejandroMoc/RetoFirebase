@@ -86,7 +86,7 @@ int nine[] = {1, 1, 0, 1, 1, 1, 1};   // nueve
 int line[] = {1, 0, 0, 0, 0, 0, 0};   // nueve
 
 
-
+//Void Setup - Instrucciones que se ejecutan una sola vez
 void setup() {
     Serial.begin(115200);
     delay(1);
@@ -97,21 +97,22 @@ void setup() {
     Serial.println();
     Serial.print("Connecting to ");
     Serial.println(ssid);
-
+    
+    
     // WPA2 enterprise magic starts here
     WiFi.disconnect(true);
     WiFi.mode(WIFI_STA);   //init wifi mode
-  //esp_wifi_set_mac(ESP_IF_WIFI_STA, &masterCustomMac[0]);
-  Serial.print("MAC >> ");
-  Serial.println(WiFi.macAddress());
-  Serial.printf("Connecting to WiFi: %s ", ssid);
-  //esp_wifi_sta_wpa2_ent_set_ca_cert((uint8_t *)incommon_ca, strlen(incommon_ca) + 1);
-  esp_wifi_sta_wpa2_ent_set_identity((uint8_t *)EAP_IDENTITY, strlen(EAP_IDENTITY));
-  esp_wifi_sta_wpa2_ent_set_username((uint8_t *)EAP_IDENTITY, strlen(EAP_IDENTITY));
-  esp_wifi_sta_wpa2_ent_set_password((uint8_t *)EAP_PASSWORD, strlen(EAP_PASSWORD));
-  //esp_wpa2_config_t configW = WPA2_CONFIG_INIT_DEFAULT();
-  //esp_wifi_sta_wpa2_ent_enable(&configW);
-  esp_wifi_sta_wpa2_ent_enable();
+    //esp_wifi_set_mac(ESP_IF_WIFI_STA, &masterCustomMac[0]);
+    Serial.print("MAC >> ");
+    Serial.println(WiFi.macAddress());
+    Serial.printf("Connecting to WiFi: %s ", ssid);
+    //esp_wifi_sta_wpa2_ent_set_ca_cert((uint8_t *)incommon_ca, strlen(incommon_ca) + 1);
+    esp_wifi_sta_wpa2_ent_set_identity((uint8_t *)EAP_IDENTITY, strlen(EAP_IDENTITY));
+    esp_wifi_sta_wpa2_ent_set_username((uint8_t *)EAP_IDENTITY, strlen(EAP_IDENTITY));
+    esp_wifi_sta_wpa2_ent_set_password((uint8_t *)EAP_PASSWORD, strlen(EAP_PASSWORD));
+    //esp_wpa2_config_t configW = WPA2_CONFIG_INIT_DEFAULT();
+    //esp_wifi_sta_wpa2_ent_enable(&configW);
+    esp_wifi_sta_wpa2_ent_enable();
     // WPA2 enterprise magic ends here
 
 
@@ -127,28 +128,28 @@ void setup() {
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
 
-///* Assign the api key (required) */
-  config.api_key = API_KEY;
+    // Asignar la API key
+    config.api_key = API_KEY;
 
-  /* Assign the RTDB URL (required) */
-  config.database_url = DATABASE_URL;
+    /* Assign the RTDB URL (required) */
+    config.database_url = DATABASE_URL;
 
-  /* Sign up */
-  if (Firebase.signUp(&config, &auth, "", "")){
-    Serial.println("ok");
-    signupOK = true;
-  }
-  else{
-    Serial.printf("%s\n", config.signer.signupError.message.c_str());
-  }
+    /* Sign up */
+    if (Firebase.signUp(&config, &auth, "", "")){
+      Serial.println("ok");
+      signupOK = true;
+    }
+    else{
+      Serial.printf("%s\n", config.signer.signupError.message.c_str());
+    }
 
-  /* Assign the callback function for the long running token generation task */
-  config.token_status_callback = tokenStatusCallback; //see addons/TokenHelper.h
+    /* Assign the callback function for the long running token generation task */
+    config.token_status_callback = tokenStatusCallback; //see addons/TokenHelper.h
 
-  Firebase.begin(&config, &auth);
-  Firebase.reconnectWiFi(true);
+    Firebase.begin(&config, &auth);
+    Firebase.reconnectWiFi(true);
 
-  for (int i = 0; i<7; i++) pinMode(LEDs[i], OUTPUT);
+    for (int i = 0; i<7; i++) pinMode(LEDs[i], OUTPUT);
 }
 
 
