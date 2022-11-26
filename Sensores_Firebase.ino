@@ -3,26 +3,34 @@
 // Estas librerias nos permiten: leer los datos por el sensor DHT11, usar las operaciones de arduino,
 // y acceder a Firebase para registrar (set) y regresar (get) datos de los sensores
 
+//Definir librerías de WiFi
 #include <esp_wpa2.h>
 #include <WiFi.h>
+//Librería de Firebase
 #include <Firebase_ESP_Client.h>
 #include <addons/TokenHelper.h>
+//Librería de Arduino
 #include "Arduino.h"
 #include "addons/RTDBHelper.h"
+//Librería del DHT11
 #include "DHT.h"
 
 // Se definen los pines empleados para el caso de los sensores de fuerza, de luz y el DHT11, este también debe ser
 // definido debido a la variedad de sensores de humedad y temperatura
 
+//Definir pin del DHT
 #define DHTPIN 4
-#define DHTTYPE DHT11   // DHT 11
+//Definir tipo de DHT
+#define DHTTYPE DHT11
 
+//Definir pin del sensor de luz y fuerza
 #define LIGHT_SENSOR_PIN 36 // ESP32 pin GIOP36 (ADC0)
 #define FORCE_SENSOR_PIN 39 // ESP32 pin GIOP39 (ADC0)
 
 
 // Declaramos la red wifi que el ESP32 empleará para conectarse y enviar elementos a la base de datos, debido a las
-// Características de la red del Tec, también se necesita una identidad 
+// Características de la red del Tec, también se necesita definir una identidad
+
 const char* ssid = "Tec";
 #define EAP_IDENTITY "a0xxxxxxx@tec.mx"
 #define EAP_PASSWORD "+**********"
@@ -30,8 +38,6 @@ const char* ssid = "Tec";
 // Autorización para poder publicar/subir datos a la base de datos de Firebase
 #define USER_EMAIL "a0xxxxxxxx@tec.mx"
 #define USER_PASSWORD "***********"
-
-
 
 
 // Firebase project API Key
