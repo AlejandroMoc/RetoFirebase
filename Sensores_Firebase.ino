@@ -131,10 +131,10 @@ void setup() {
     // Asignar la API key
     config.api_key = API_KEY;
 
-    /* Assign the RTDB URL (required) */
+    // Asignar la URL RTDB (Real Time Database)
     config.database_url = DATABASE_URL;
 
-    /* Sign up */
+    //Iniciar sesión
     if (Firebase.signUp(&config, &auth, "", "")){
       Serial.println("ok");
       signupOK = true;
@@ -143,12 +143,14 @@ void setup() {
       Serial.printf("%s\n", config.signer.signupError.message.c_str());
     }
 
-    /* Assign the callback function for the long running token generation task */
+    // Asignar la función de devolución para la tarea prolongada de generación de tokens
     config.token_status_callback = tokenStatusCallback; //see addons/TokenHelper.h
 
+    //Ingresar a la base de datos
     Firebase.begin(&config, &auth);
     Firebase.reconnectWiFi(true);
-
+    
+    //Impresión inicial de los números del 1 al 7 en el LED
     for (int i = 0; i<7; i++) pinMode(LEDs[i], OUTPUT);
 }
 
@@ -184,70 +186,67 @@ void loop() {
   float hic = dht.computeHeatIndex(t, h, false);
 
   
-    if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 1 || sendDataPrevMillis == 0)) {
+  if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 1 || sendDataPrevMillis == 0)) {
     sendDataPrevMillis = millis();
-   // Write an Int number on the database path test/int
-    if (Firebase.RTDB.setInt(&fbdo, "app_inventor/Luz", analogValue)){
-      Serial.println("PASSED");
-      Serial.println("PATH: " + fbdo.dataPath());
-      Serial.println("TYPE: " + fbdo.dataType());
+  // Write an Int number on the database path test/int
+  if (Firebase.RTDB.setInt(&fbdo, "app_inventor/Luz", analogValue)){
+    Serial.println("PASSED");
+    Serial.println("PATH: " + fbdo.dataPath());
+    Serial.println("TYPE: " + fbdo.dataType());
 
+  }
+  else {
+    Serial.println("FAILED");
+    Serial.println("REASON: " + fbdo.errorReason());
+  }
+  //count++;
+  if (Firebase.RTDB.setFloat(&fbdo, "app_inventor/Humedad", h)){
+    Serial.println("PASSED");     
+    Serial.println("PATH: " + fbdo.dataPath());
+    Serial.println("TYPE: " + fbdo.dataType());
+  }
+  else {
+    Serial.println("FAILED");
+    Serial.println("REASON: " + fbdo.errorReason());
+  }
+  // Write an Float number on the database path test/float
+  if (Firebase.RTDB.setFloat(&fbdo, "app_inventor/Temperatura",hic )){
+    Serial.println("PASSED");
+    Serial.println("PATH: " + fbdo.dataPath());
+    Serial.println("TYPE: " + fbdo.dataType());
+  }
+  else {
+    Serial.println("FAILED");
+    Serial.println("REASON: " + fbdo.errorReason());
+  }
+  // Write an Int number on the database path test/int
+  if (Firebase.RTDB.setInt(&fbdo, "app_inventor/Fuerza", analogReading)){
+    Serial.println("PASSED");
+    Serial.println("PATH: " + fbdo.dataPath());
+    Serial.println("TYPE: " + fbdo.dataType());
+    //delay(10);
+    //Firebase.RTDB.setInt(&fbdo, "ti/mov", pinStateP);
+   }
+  else {
+    Serial.println("FAILED");
+    Serial.println("REASON: " + fbdo.errorReason());
+  }
+  // Write an Int number on the database path test/int
+  if (Firebase.RTDB.setInt(&fbdo, "app_inventor/Movimiento", pinStateCurrent)){
+    Serial.println("PASSED");
+    Serial.println("PATH: " + fbdo.dataPath());
+    Serial.println("TYPE: " + fbdo.dataType());
+    delay(5000);{
+     Firebase.RTDB.setInt(&fbdo, "app_inventor/Movimiento", 0);
     }
-    else {
-      Serial.println("FAILED");
-      Serial.println("REASON: " + fbdo.errorReason());
-    }
-    //count++;
-    if (Firebase.RTDB.setFloat(&fbdo, "app_inventor/Humedad", h)){
-      Serial.println("PASSED");
-      Serial.println("PATH: " + fbdo.dataPath());
-      Serial.println("TYPE: " + fbdo.dataType());
-    }
-    else {
-      Serial.println("FAILED");
-      Serial.println("REASON: " + fbdo.errorReason());
-    }
-    // Write an Float number on the database path test/float
-    if (Firebase.RTDB.setFloat(&fbdo, "app_inventor/Temperatura",hic )){
-      Serial.println("PASSED");
-      Serial.println("PATH: " + fbdo.dataPath());
-      Serial.println("TYPE: " + fbdo.dataType());
-    }
-    else {
-      Serial.println("FAILED");
-      Serial.println("REASON: " + fbdo.errorReason());
-    }
-
-   // Write an Int number on the database path test/int
-    if (Firebase.RTDB.setInt(&fbdo, "app_inventor/Fuerza", analogReading)){
-      Serial.println("PASSED");
-      Serial.println("PATH: " + fbdo.dataPath());
-      Serial.println("TYPE: " + fbdo.dataType());
-      //delay(10);
-      //Firebase.RTDB.setInt(&fbdo, "ti/mov", pinStateP);
-    }
-    else {
-      Serial.println("FAILED");
-      Serial.println("REASON: " + fbdo.errorReason());
-    }
-
-   // Write an Int number on the database path test/int
-    if (Firebase.RTDB.setInt(&fbdo, "app_inventor/Movimiento", pinStateCurrent)){
-      Serial.println("PASSED");
-      Serial.println("PATH: " + fbdo.dataPath());
-      Serial.println("TYPE: " + fbdo.dataType());
-      delay(5000);{
-       Firebase.RTDB.setInt(&fbdo, "app_inventor/Movimiento", 0);
-      }
-    }
-    else {
-      Serial.println("FAILED");
-      Serial.println("REASON: " + fbdo.errorReason());
-    }
-
-    if (Firebase.RTDB.getString(&fbdo, "app_inventor/Numero")){
-      if (fbdo.dataType() == "string"){
-        stringValue = fbdo.stringData(); 
+  }
+  else {
+    Serial.println("FAILED");
+    Serial.println("REASON: " + fbdo.errorReason());
+  }
+  if (Firebase.RTDB.getString(&fbdo, "app_inventor/Numero")){
+    if (fbdo.dataType() == "string"){
+      stringValue = fbdo.stringData(); 
         int n = stringValue.toInt();
           if (n == 0){
             for (int i = 0; i<7; i++) digitalWrite(LEDs[i], zero[i]);}   
@@ -271,10 +270,9 @@ void loop() {
             for (int i = 0; i<7; i++) digitalWrite(LEDs[i], nine[i]);}
           if (n > 9){
             for (int i = 0; i<7; i++) digitalWrite(LEDs[i], line[i]);}           
-      }
-
-  }
-  }
+    }
+   }
+ }
 }
 
 
