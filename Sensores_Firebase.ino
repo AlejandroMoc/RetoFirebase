@@ -165,8 +165,8 @@ int value = 0;
 
 void loop() {
 
-  pinStatePrevious = pinStateCurrent; // store old state
-  pinStateCurrent = digitalRead(PIN_TO_SENSOR);   // read new state
+  pinStatePrevious = pinStateCurrent;             // Leer el estado anterior
+  pinStateCurrent = digitalRead(PIN_TO_SENSOR);   // Leer el estado actual
 
   int analogValue = analogRead(LIGHT_SENSOR_PIN);
   int analogReading = analogRead(FORCE_SENSOR_PIN);
@@ -174,15 +174,13 @@ void loop() {
   //Serial.print("Analog Value = ");
   //Serial.print(analogValue);   // the raw analog reading
 
+  // Leer la humedad y la temperatura en Celsius (default) y en Fahrenheit
   float h = dht.readHumidity();
-  // Read temperature as Celsius (the default)
   float t = dht.readTemperature();
-  // Read temperature as Fahrenheit (isFahrenheit = true)
   float f = dht.readTemperature(true);
 
-  // Compute heat index in Fahrenheit (the default)
+  // Calcular el índice de calor en Fahrenheit (default) y Celsius
   float hif = dht.computeHeatIndex(f, h);
-  // Compute heat index in Celsius (isFahreheit = false)
   float hic = dht.computeHeatIndex(t, h, false);
 
   
@@ -193,7 +191,6 @@ void loop() {
     Serial.println("PASSED");
     Serial.println("PATH: " + fbdo.dataPath());
     Serial.println("TYPE: " + fbdo.dataType());
-
   }
   else {
     Serial.println("FAILED");
