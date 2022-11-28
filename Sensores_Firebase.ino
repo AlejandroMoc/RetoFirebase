@@ -1,6 +1,6 @@
 
 // Librerias necesarias para le funcionamiento del código en Arduino IDE.
-// Estas librerias nos permiten: leer los datos por el sensor DHT11, usar las operaciones de arduino,
+// Estas librerias nos permiten: leer los datos por el sensor DHT11, usar las operaciones de Arduino,
 // y acceder a Firebase para registrar (set) y regresar (get) datos de los sensores
 
 //Definir librerías de WiFi
