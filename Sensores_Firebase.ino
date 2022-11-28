@@ -224,24 +224,24 @@ void loop() {
     //delay(10);
     //Firebase.RTDB.setInt(&fbdo, "ti/mov", pinStateP);
    }
-  else {
+   else {
     Serial.println("FAILED");
     Serial.println("REASON: " + fbdo.errorReason());
-  }
-  // Write an Int number on the database path test/int
-  if (Firebase.RTDB.setInt(&fbdo, "app_inventor/Movimiento", pinStateCurrent)){
+   }
+   // Write an Int number on the database path test/int
+   if (Firebase.RTDB.setInt(&fbdo, "app_inventor/Movimiento", pinStateCurrent)){
     Serial.println("PASSED");
     Serial.println("PATH: " + fbdo.dataPath());
     Serial.println("TYPE: " + fbdo.dataType());
     delay(5000);{
      Firebase.RTDB.setInt(&fbdo, "app_inventor/Movimiento", 0);
     }
-  }
-  else {
+    }
+   else {
     Serial.println("FAILED");
     Serial.println("REASON: " + fbdo.errorReason());
-  }
-  if (Firebase.RTDB.getString(&fbdo, "app_inventor/Numero")){
+   }
+   if (Firebase.RTDB.getString(&fbdo, "app_inventor/Numero")){
     if (fbdo.dataType() == "string"){
       stringValue = fbdo.stringData(); 
         int n = stringValue.toInt();
@@ -267,7 +267,7 @@ void loop() {
             for (int i = 0; i<7; i++) digitalWrite(LEDs[i], nine[i]);}
           if (n > 9){
             for (int i = 0; i<7; i++) digitalWrite(LEDs[i], line[i]);}           
-    }
+     }
    }
  }
 }
